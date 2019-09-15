@@ -1,0 +1,38 @@
+
+.side-nav {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 18px;
+
+    fa-icon {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    span {
+      line-height: 18px;
+    }
+
+    &:not(.active) {
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    &:hover {
+      filter: brightness(65%);
+    }
+
+  }
+
+  fa-icon {
+    font-size: 14px;
+  }
+
+}
