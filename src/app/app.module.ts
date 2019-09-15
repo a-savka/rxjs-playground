@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { PlaygroundModule } from '../playground/playground.module';
+
 import { HomePageComponent } from './containers/home-page/home-page.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
@@ -31,7 +33,8 @@ import { faArchway, faHome, faSignOutAlt, faTachometerAlt, faFileAlt } from '@fo
     RouterModule.forRoot(appRoutes, {
       useHash: true
     }),
-    FontAwesomeModule
+    FontAwesomeModule,
+    PlaygroundModule
   ],
   providers: [
   ],

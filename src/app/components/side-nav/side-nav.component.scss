@@ -1,8 +1,9 @@
 
 .side-nav {
   padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: #f8f9fa;
+  height: calc(100vh - 60px);
+  width: 280px;
 
   .nav-item {
     display: flex;
