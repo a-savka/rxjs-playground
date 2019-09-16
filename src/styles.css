@@ -24,3 +24,9 @@ body {
 .app-page {
   padding-top: 20px;
 }
+
+.console-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

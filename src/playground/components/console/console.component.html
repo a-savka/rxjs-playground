@@ -1,0 +1,14 @@
+
+<div class="console-container">
+  <div class="console-title">{{ title }}</div>
+  <div class="console-button" *ngIf="canEmit">
+      <button class="btn btn-secondary btn-sm" type="button" (click)="emitValue()">Emit</button>
+      <button class="btn btn-secondary btn-sm" type="button" (click)="completeStream()">Complete</button>
+    </div>
+  <div class="console-button" *ngIf="!canEmit">
+    &nbsp;
+  </div>
+  <div class="console">
+    <div class="console-value" *ngFor="let value of values">{{ value.toString() }}</div>
+  </div>
+</div>

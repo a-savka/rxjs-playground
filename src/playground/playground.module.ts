@@ -7,6 +7,7 @@ import { CombineLatestComponent } from './pages/combine-latest/combine-latest.co
 import { SwicthMapComponent } from './pages/switch-map/switch-map.component';
 import { MergeMapComponent } from './pages/merge-map/merge-map.component';
 
+import { ConsoleComponent } from './components/console/console.component';
 import { PlaygroundMenuComponent } from './components/playground-menu/playground-menu.component';
 
 import { routes } from './playground.routes';
@@ -16,7 +17,8 @@ import { routes } from './playground.routes';
     CombineLatestComponent,
     SwicthMapComponent,
     MergeMapComponent,
-    PlaygroundMenuComponent
+    PlaygroundMenuComponent,
+    ConsoleComponent
   ],
   imports: [
     BrowserModule,
