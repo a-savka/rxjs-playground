@@ -15,9 +15,10 @@ import { PlaygroundBase } from '../playground-base';
 export class MergeMapComponent extends PlaygroundBase {
 
   constructor() {
-    super(2);
-    this.result$ = this.sources$[0].pipe(
-      mergeMap(() => this.sources$[1])
+    super(0);
+
+    this.result$ = this.initialStream$.pipe(
+      mergeMap(() => this.createStream())
     );
   }
 

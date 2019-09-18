@@ -5,9 +5,17 @@
 
 <div class="console-block">
 
+  <console
+    [values$]="initialStream$"
+    [title]="'initial'"
+    [canEmit]="true"
+    (emit)="emitInitialValue()"
+    (complete)="completeInitial()"
+  ></console>
+
   <console *ngFor="let source$ of sources$; let idx = index"
     [values$]="source$"
-    [title]="'Source ' + (idx + 1)"
+    [title]="'Merge ' + (idx + 1)"
     [canEmit]="true"
     (emit)="emitValue(idx)"
     (complete)="complete(idx)"
