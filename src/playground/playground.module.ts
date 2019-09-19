@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { CombineLatestComponent } from './pages/combine-latest/combine-latest.component';
 import { SwicthMapComponent } from './pages/switch-map/switch-map.component';
 import { MergeMapComponent } from './pages/merge-map/merge-map.component';
+import { CombineAllComponent } from './pages/combine-all/combine-all.component';
 
 import { ConsoleComponent } from './components/console/console.component';
 import { PlaygroundMenuComponent } from './components/playground-menu/playground-menu.component';
@@ -17,6 +18,7 @@ import { routes } from './playground.routes';
     CombineLatestComponent,
     SwicthMapComponent,
     MergeMapComponent,
+    CombineAllComponent,
     PlaygroundMenuComponent,
     ConsoleComponent
   ],

@@ -10,7 +10,7 @@ import { Observable, Subscription } from "rxjs";
 })
 export class ConsoleComponent implements OnInit, OnDestroy {
 
-  @Input() public values$: Observable<(string | string[])>;
+  @Input() public values$: Observable<(string | string[] | Observable<any>)>;
   @Input() public title: string;
   @Input() public canEmit: boolean;
 
@@ -36,7 +36,7 @@ export class ConsoleComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.subscription = this.values$.subscribe(
-      value => this.values.push(`Next value: ${value}`),
+      value => this.logValue(value),
       error => this.values.push(`Error ${error}`),
       () => this.values.push('completed')
     );
@@ -44,6 +44,14 @@ export class ConsoleComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  private logValue(value: string | string[] | Observable<any>) {
+    if (value instanceof Observable) {
+      this.values.push(`Next value: [Observable]`);
+    } else {
+      this.values.push(`Next value: ${value}`);
+    }
   }
 
 }

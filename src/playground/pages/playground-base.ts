@@ -24,7 +24,7 @@ export class PlaygroundBase {
   }
 
   public emitValue(sourceIdx) {
-    const value = `value ${this.nextValues[sourceIdx]++}`;
+    const value = `v-${sourceIdx+1}-${this.nextValues[sourceIdx]++}`;
     this.sources$[sourceIdx].next(value);
   }
 
