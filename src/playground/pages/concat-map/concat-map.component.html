@@ -1,0 +1,30 @@
+
+<p>
+  Concat map
+</p>
+
+<div class="console-block">
+
+  <console
+    [values$]="initialStream$"
+    [title]="'initial'"
+    [canEmit]="true"
+    (emit)="emitInitialValue()"
+    (complete)="completeInitial()"
+  ></console>
+
+  <console *ngFor="let source$ of sources$; let idx = index"
+    [values$]="source$"
+    [title]="'Concat ' + (idx + 1)"
+    [canEmit]="true"
+    (emit)="emitValue(idx)"
+    (complete)="complete(idx)"
+  ></console>
+
+  <console
+    [values$]="result$"
+    [title]="'Result'"
+    [canEmit]="false"
+  ></console>
+
+</div>
