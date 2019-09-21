@@ -1,6 +1,5 @@
 
-import { Component } from '@angular/core';
-
+import { Component, Injector } from '@angular/core';
 import { combineAll } from 'rxjs/operators';
 
 import { PlaygroundBase } from '../playground-base';
@@ -17,8 +16,10 @@ export class CombineAllComponent extends PlaygroundBase {
 
   public customInitial$: Subject<Observable<any>>;
 
-  constructor() {
-    super(0);
+  constructor(
+    injector: Injector
+  ) {
+    super(0, injector);
 
     this.customInitial$ = new Subject<Observable<any>>();
     this.result$ = this.customInitial$.pipe(

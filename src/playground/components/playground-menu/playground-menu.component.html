@@ -1,32 +1,8 @@
 <ul class="nav flex-column">
 
-  <li class="nav-item">
-    <a class="nav-link" href="#/playground/combine-latest">
-      combineLatest
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="#/playground/switch-map">
-      swicthMap
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="#/playground/merge-map">
-      mergeMap
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="#/playground/combine-all">
-      combineAll
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="#/playground/concat-map">
-      concatMap
+  <li class="nav-item" *ngFor="let item of items">
+    <a class="nav-link" href="#/playground/{{item.urlPath}}">
+      {{ item.title }}
     </a>
   </li>
 

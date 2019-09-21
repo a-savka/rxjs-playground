@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 import { combineLatest } from 'rxjs/operators';
 
@@ -15,8 +15,10 @@ import { PlaygroundBase } from '../playground-base';
 })
 export class CombineLatestComponent extends PlaygroundBase {
 
-  constructor() {
-    super(2);
+  constructor(
+    injector: Injector
+  ) {
+    super(2, injector);
     this.result$ = this.sources$[0].pipe(
       combineLatest(this.sources$[1])
     );

@@ -1,5 +1,9 @@
 
+import { Injector } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { ActivatedRoute } from '@angular/router';
 
 export class PlaygroundBase {
 
@@ -10,8 +14,18 @@ export class PlaygroundBase {
   public nextInitialValue: number;
 
   public result$: Observable<any>;
+  public pageTitle$: Observable<string>;
 
-  constructor(sourceCount: number) {
+  constructor(
+    sourceCount: number,
+    injector: Injector
+  ) {
+
+    const ars: ActivatedRoute = injector.get(ActivatedRoute);
+
+    this.pageTitle$ = ars.data.pipe(
+      map(data => data.title as string)
+    );
 
     this.initialStream$ = new Subject<any>();
     this.nextInitialValue = 1;    this.sources$ = [];
@@ -31,7 +45,6 @@ export class PlaygroundBase {
   public complete(sourceIdx) {
     this.sources$[sourceIdx].complete();
   }
-
 
   public emitInitialValue() {
     this.initialStream$.next(this.nextInitialValue++);

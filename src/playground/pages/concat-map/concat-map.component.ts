@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 import { concatMap } from 'rxjs/operators';
 
@@ -14,8 +14,10 @@ import { PlaygroundBase } from '../playground-base';
 })
 export class ConcatMapComponent extends PlaygroundBase {
 
-  constructor() {
-    super(0);
+  constructor(
+    injector: Injector
+  ) {
+    super(0, injector);
 
     this.result$ = this.initialStream$.pipe(
       concatMap(() => this.createStream())

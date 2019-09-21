@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 import { switchMap } from 'rxjs/operators';
 
@@ -14,8 +14,10 @@ import { PlaygroundBase } from '../playground-base';
 })
 export class SwicthMapComponent extends PlaygroundBase {
 
-  constructor() {
-    super(0);
+  constructor(
+    injector: Injector
+  ) {
+    super(0, injector);
 
     this.result$ = this.initialStream$.pipe(
       switchMap(() => this.createStream())
