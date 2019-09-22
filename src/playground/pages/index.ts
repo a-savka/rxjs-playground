@@ -8,6 +8,7 @@ import { SwicthMapComponent } from './switch-map/switch-map.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
 import { ConcatMapComponent } from './concat-map/concat-map.component';
 import { CombineAllComponent } from './combine-all/combine-all.component';
+import { ForkJoinComponent } from './fork-join/fork-join.component';
 
 export const childRoutes: Routes = [
   {
@@ -44,6 +45,13 @@ export const childRoutes: Routes = [
       title: 'combineAll'
     },
     component: CombineAllComponent
+  },
+  {
+    path: 'fork-join',
+    data: {
+      title: 'forkJoin'
+    },
+    component: ForkJoinComponent
   }
 ]
 
@@ -57,5 +65,6 @@ export const components = [
   SwicthMapComponent,
   MergeMapComponent,
   ConcatMapComponent,
-  CombineAllComponent
+  CombineAllComponent,
+  ForkJoinComponent
 ];
