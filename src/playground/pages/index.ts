@@ -9,6 +9,8 @@ import { MergeMapComponent } from './merge-map/merge-map.component';
 import { ConcatMapComponent } from './concat-map/concat-map.component';
 import { CombineAllComponent } from './combine-all/combine-all.component';
 import { ForkJoinComponent } from './fork-join/fork-join.component';
+import { RaceComponent } from './race/race.component';
+import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
 
 export const childRoutes: Routes = [
   {
@@ -52,6 +54,20 @@ export const childRoutes: Routes = [
       title: 'forkJoin'
     },
     component: ForkJoinComponent
+  },
+  {
+    path: 'race',
+    data: {
+      title: 'race'
+    },
+    component: RaceComponent
+  },
+  {
+    path: 'with-latest-from',
+    data: {
+      title: 'withLatestFrom'
+    },
+    component: WithLatestFromComponent
   }
 ]
 
@@ -66,5 +82,7 @@ export const components = [
   MergeMapComponent,
   ConcatMapComponent,
   CombineAllComponent,
-  ForkJoinComponent
+  ForkJoinComponent,
+  RaceComponent,
+  WithLatestFromComponent
 ];
