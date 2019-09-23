@@ -17,10 +17,10 @@ export class WithLatestFromComponent extends PlaygroundBase {
   constructor(
     injector: Injector
   ) {
-    super(1, injector);
+    super(2, injector);
 
     this.result$ = this.initialStream$.pipe(
-      withLatestFrom(this.sources$[0])
+      withLatestFrom(this.sources$[0], this.sources$[1])
     );
   }
 
