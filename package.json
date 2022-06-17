@@ -54,7 +54,7 @@
     "@types/node": "~6.0.60",
     "@types/sinon": "^2.3.1",
     "codelyzer": "^4.0.1",
-    "electron": "^6.0.10",
+    "electron": "^15.5.5",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
